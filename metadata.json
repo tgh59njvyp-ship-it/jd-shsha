@@ -1,0 +1,6 @@
+{
+  "name": "CARD SCANNER",
+  "description": "ポケカを撮るだけ。AIがカードを識別・査定。マイコレクション、カード図鑑、価格推移、最新ニュース、新商品情報をひとつにまとめたポケカ総合Webアプリ。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

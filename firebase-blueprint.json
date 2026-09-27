@@ -1,0 +1,114 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "User profile with role and preferences",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "email"]
+    },
+    "cards": {
+      "title": "Card",
+      "description": "Pokémon TCG database cards",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "cardNumber": { "type": "string" },
+        "rarity": { "type": "string" },
+        "set": { "type": "string" },
+        "setCode": { "type": "string" },
+        "cardType": { "type": "string" },
+        "hp": { "type": "number" },
+        "language": { "type": "string" },
+        "finish": { "type": "string" },
+        "isPromo": { "type": "boolean" },
+        "imageUrl": { "type": "string" },
+        "hasPriceData": { "type": "boolean" },
+        "minPrice": { "type": "number" },
+        "maxPrice": { "type": "number" },
+        "marketPrice": { "type": "number" },
+        "buyoutPrice": { "type": "number" },
+        "sellingPrice": { "type": "number" },
+        "mintPrice": { "type": "number" },
+        "priceSource": { "type": "string" },
+        "priceUpdatedAt": { "type": "string" }
+      },
+      "required": ["id", "name", "cardNumber", "rarity", "set"]
+    },
+    "collections": {
+      "title": "Collection Item",
+      "description": "User owned card in collection",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "cardId": { "type": "string" },
+        "cardName": { "type": "string" },
+        "cardNumber": { "type": "string" },
+        "rarity": { "type": "string" },
+        "set": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "quantity": { "type": "number" },
+        "condition": { "type": "string" },
+        "purchasePrice": { "type": "number" },
+        "acquiredAt": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "userId", "cardId", "quantity"]
+    },
+    "appraisals": {
+      "title": "Appraisal",
+      "description": "Past AI scan appraisals",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "cardName": { "type": "string" },
+        "cardNumber": { "type": "string" },
+        "rarity": { "type": "string" },
+        "set": { "type": "string" },
+        "conditionRank": { "type": "string" },
+        "hasPriceData": { "type": "boolean" },
+        "minEstimatedPrice": { "type": "number" },
+        "maxEstimatedPrice": { "type": "number" },
+        "scannedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "cardName"]
+    },
+    "news": {
+      "title": "News Item",
+      "description": "Pokeka news and announcements",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "summary": { "type": "string" },
+        "category": { "type": "string" },
+        "publishedAt": { "type": "string" },
+        "source": { "type": "string" },
+        "url": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["id", "title", "category"]
+    },
+    "products": {
+      "title": "Product Item",
+      "description": "Pokémon TCG products and expansion packs",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "releaseDate": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "type": { "type": "string" },
+        "isUpcoming": { "type": "boolean" },
+        "officialUrl": { "type": "string" }
+      },
+      "required": ["id", "name", "releaseDate"]
+    }
+  }
+}

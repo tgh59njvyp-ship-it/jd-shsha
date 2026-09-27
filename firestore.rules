@@ -1,0 +1,84 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Connection test match
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+
+    // Users Collection
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // Cards Database (Public read, admin write)
+    match /cards/{cardId} {
+      allow read, write: if true;
+    }
+
+    // Sets Database (Public read, admin write)
+    match /sets/{setId} {
+      allow read, write: if true;
+    }
+
+    // Appraisals (Public read/write for scanner demo & authenticated users)
+    match /appraisals/{appraisalId} {
+      allow read, write: if true;
+    }
+
+    // User Collections
+    match /collections/{collectionId} {
+      allow read, write: if true;
+    }
+
+    // User Collection Items
+    match /collection_items/{itemId} {
+      allow read, write: if true;
+    }
+
+    // Wishlist
+    match /wishlist/{wishlistId} {
+      allow read, write: if true;
+    }
+
+    // Favorites
+    match /favorites/{favoriteId} {
+      allow read, write: if true;
+    }
+
+    // Price History
+    match /price_history/{historyId} {
+      allow read, write: if true;
+    }
+
+    // News
+    match /news/{newsId} {
+      allow read, write: if true;
+    }
+
+    // Products
+    match /products/{productId} {
+      allow read, write: if true;
+    }
+
+    // Notifications
+    match /notifications/{notificationId} {
+      allow read, write: if true;
+    }
+
+    // User Settings
+    match /user_settings/{userId} {
+      allow read, write: if true;
+    }
+  }
+}
